@@ -8,7 +8,6 @@ map! fnn <- function() <CR>{}3ba
 
 " typical for loops
 map! frl for (i in 1:n) {}bbi
-map! wfrl for (i in which()) {}
 
 " typical if, if-else
 map! ifff if () {}2ba
@@ -20,7 +19,7 @@ map! ccn c()
 " length() function
 map! lng length()i
 
-" comment
+" comment this line
 map ccc i# 
 
 " append browser() call
