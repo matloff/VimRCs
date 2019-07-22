@@ -39,6 +39,8 @@ map! nccc ncol()i
 map! cbd cbind()
 map! rbd rbind()
 
+" useful Vim tips
+
 " find def of, e.g. function, variable etc. under cursor:
 " gd  normal vim
 
