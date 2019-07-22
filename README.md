@@ -14,3 +14,6 @@ vimdrc  for .Md files; very minimal; other people have some on the Web
 
 virrc  for .R files; see also [Nvim-R](https://www.vim.org/scripts/script.php?script_id=2628)
 
+vilatexrc  for .tex files; many others on the Web
+
+

@@ -1,0 +1,196 @@
+
+" misc.
+" displayed quote:
+map! dq \begin{quote}\end{quote}ki
+" within-text quoted material:
+map! wtq ``''hi
+" footnote:
+map! ftn \footnote{}i
+" suppress indentation of this paragraph
+map! noii \noindent 
+map! pct \%
+
+" verbatim items
+" ordinary verbatim (displayed):
+map! vrbt \begin{verbatim}\end{verbatim}ki
+" small-fonts verbatim (need packages fancyvrb and relsize)
+" ordinary:
+map! Vrbt \begin{Verbatim}[fontsize=\relsize{-2}]\end{Verbatim}ki
+" with line numbers
+map! Vrbtn \begin{Verbatim}[fontsize=\relsize{-2},numbers=left]\end{Verbatim}ki
+" include packages:
+map! vrbincl \usepackage{fancyvrb}\usepackage{relsize}
+
+" nicer than verbatim; need \usepackage{listings}
+map! lll \begin{lstlisting}\end{lstlisting}
+map! llln \begin{lstlisting}[numbers=left]\end{lstlisting}k
+map! lllsi \lstinline{}i
+map! lllr \begin{lstlisting}[language=r\end{lstlisting}
+map! lllnr \begin{lstlisting}[language=r,numbers=left]\end{lstlisting}k
+
+" labels, references 
+map! lbl \label{}i
+map! rff \ref{}i
+
+" itemize
+" all start with i
+" basic begin/end:
+map! itmz \begin{itemize}\end{itemize} k$a
+" individual item:
+abb itm \item
+
+" font changes 
+" all start with f 
+" bold face:
+map! fcb \textbf{}i
+" italics:
+map! fci \textit{}i
+" teletype:
+map! fct {\tt }i
+" smallcaps:
+map! fcs {\sc }i
+" start bold 
+map fsb i{\bf 
+" start italics 
+map fsi i{\it 
+" start teletype
+map fst i{\tt 
+" start small caps
+map fss i{\sc 
+" add right brace
+map aab a}
+" needs amsfonts
+map! mbb \mathbb{}i
+
+" sectioning
+" section:
+map! scn \section{}i
+map! sscn \subsection{}i
+map! ssscn \subsubsection{}i
+
+" table operations
+" all start with t
+" tblr consists of \tabular, with \table
+" if no float desired, delete \table, \caption, \label, \center, and
+" keep just the \tabular
+" draw horizontal line:
+map! thl \hline
+map! tblr \begin{table}\begin{center}\vskip 0.5in\begin{tabular}{}thl\end{tabular}\end{center}\caption{}\label{}\end{table}kkkkk
+
+" NOTE CAREFULLY:  in using tblr above, use | for vertical lines, 
+" e.g. \begin{tabular}{|c|c|c|}; use extra | for extra vertical lines
+" 2-column row:
+map! te2 1 & 2 \\ thl 
+" 3-column row:
+map! te3 1 & 2 & 3 \\ thl 
+" 4-column row:
+map! te4 1 & 2 & 3 & 4 \\ thl 
+
+" math
+" all the math mappings begin with m
+" inline math expression
+map! mxp $$i
+" equation (numbered)
+map! meqn \begin{equation}\end{equation}ki
+" equation array, preset for two equations; add more as desired
+map! meqna \begin{eqnarray}&=& \\ &=& \end{eqnarray}
+" line up &=&
+map! mlu &=&
+map! mrf ()i\ref{}i
+" fraction
+map! mfr \frac{}{}hhi
+" superscript
+map! msp ^{}i
+" subscript
+" to write "nth"
+map! mnth $^{th}$
+map! msb _{}i
+" sum from i = 1 to n
+map! msm \sum_{i=1}^n
+" reference to a labeled equation
+" for vectors and matrices
+map! marr \left ( \begin{array}{} \end{array} \right )ki
+map! mrff ()irff
+" integral
+map! miint \int_{}^{} ~ d
+" double integral
+map! miint2 \int_{}^{} \int_{}^{} ~ d ~ d
+" limit to infinity
+map! mlm \lim_{n \rightarrow \infty}
+" binomial coefficient, i.e. `n choose k'; must have
+" \usepackage{amsmath}
+map! mbn \binom{}{}
+" Greek lambda
+map! mmlb \lambda
+" Greek mu
+map! mmuu \mu
+" Greek nu
+map! mnuu \nu
+" Greek rho
+map! mrh \rho
+" Greek pi
+map! mpii \pi
+" Greek theta
+map! mth \theta
+" Greek gamma
+map! mgm \gamma
+" Greek eta
+map! metaa \eta
+" Greek sigma
+map! msg \sigma
+" Greek alpha
+map! mlp \alpha
+" Greek beta
+map! mbt \beta
+" multiplication dot
+map! cddt \cdot
+" within math mode, have text appear with spaces and in Roman font; note
+" that spaces within {} WILL appear in the final product
+map! txxr \textrm{}i
+" for P(A and B)
+map! txand \textrm{ and } 
+" for P(A or B)
+map! txor \textrm{ or } 
+" relations
+" greater or equal to
+map! gq \geq
+" less than equal to
+map! lq \leq
+" less than 
+" not less than
+map! nlltt \nless
+" theory
+" \newtheorem{Theorem}{Theorem}  % for theorems 
+map! mprf \begin{proof}\end{proof}ki
+" \usepackage{amsthm}  % for proofs 
+map! mthm \begin{Theorem}\end{Theorem}ki
+map! mlem \begin{Lemma}\end{Lemma}ki
+" effect is clearer with \widehat and \overline than \hat and \bar
+map! mhat \widehat{}i
+map! mbar \overline{}i
+" to draw a vertical bar within text
+
+" for editing .bib files
+map! bbbr @article{,   author = "",title = "",journal = "",year = ,volume = ,number = ,pages = "--" 0i}
+map! bbbk @book{,   author = "",title = "",publisher = "",year = 0i}
+map! bbbp @inproceedings{,   author = "",title = "",booktitle = "",year = ,pages = "--" 0i}
+
+" make a multicolumn subpage
+map! cols \begin{column}{0.25\linewidth}\end{column}\begin{column}{0.55\linewidth}\end{column}\end{columns}
+
+" for use with Beamer, http://heather.cs.ucdavis.edu/~matloff/beamer.html 
+map! sfr \begin{frame} \frametitle{}\pause\end{frame} 
+map! sps \pause
+map sff a[fragile]
+
+" for use with Prosper, http://heather.cs.ucdavis.edu/~matloff/prosper.html 
+" slide (may include overlays)
+map! sldb \begin{slide}{}
+map! slde \end{slide}
+" overlays with itemstep
+map! svr \overlays{}{sldb\begin{itemstep}\end{itemstep}slde}
+
+" for .Rd and R Journal files
+map! cdd \code{}i
+map! pkk \pkg{}i
+
