@@ -1,0 +1,14 @@
+
+" aimed at producing effects while typing the code; e.g. to type
+**xyz**, type ,bxyz  ( means the ESC key), as opposed to first
+typing xyz, then highlighting it, then making is bold
+
+" insert URL link
+map! ,u []()2hi
+
+" insert italicized tex
+map! ,i **i
+
+" insert bold tex
+map! ,b ****hi
+

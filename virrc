@@ -1,0 +1,51 @@
+
+" assignment operator
+map! eqq <-
+
+" function def; places opening { in column 1 to take advantage of vim's
+" [[ etc. ops; see :help [[
+map! fnn <- function() <CR>{}3ba
+
+" typical for loops
+map! frl for (i in 1:n) {}bbi
+map! wfrl for (i in which()) {}
+
+" typical if, if-else
+map! ifff if () {}2ba
+map! ifffe if () {} else {}5b
+
+" concatenate
+map! ccn c()
+
+" length() function
+map! lng length()i
+
+" comment
+map ccc i# 
+
+" append browser() call
+map abrs $abrowser()
+
+" vector/matrix stuff
+" new vector
+map! nvv <- vector(length=)i
+" new matrix
+map! nmm <- matrix(nrow=,ncol=)
+
+" nrow(), ncol()
+map! nrrr nrow()i
+map! nccc ncol()i
+
+" cbind(), rbind()
+map! cbd cbind()
+map! rbd rbind()
+
+" find def of, e.g. function, variable etc. under cursor:
+" gd  normal vim
+
+" example of Vim commands with args: set specified variable to 8;
+" :com -nargs=1 Z8 :s/^/<args> <- 8/
+" test it:
+" :Z8 w
+" then w <- 8 will be inserted at the cursor
+
