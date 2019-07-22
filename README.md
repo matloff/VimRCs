@@ -12,5 +12,5 @@ New to Vim?  See my [Vim tutorial](http://heather.cs.ucdavis.edu/~matloff/vim.ht
 
 vimdrc  for .Md files; very minimal; other people have some on the Web
 
-virrc  for .R files;
+virrc  for .R files; see also [Nvim-R](https://www.vim.org/scripts/script.php?script_id=2628)
 

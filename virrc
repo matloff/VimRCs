@@ -3,7 +3,7 @@
 map! eqq <-
 
 " function def; places opening { in column 1 to take advantage of vim's
-" [[ etc. ops; see :help [[
+" [[ etc. ops; see :help [[; see also gd below
 map! fnn <- function() <CR>{}3ba
 
 " typical for loops
