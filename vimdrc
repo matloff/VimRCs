@@ -12,3 +12,6 @@ map! ,i **i
 " insert bold tex
 map! ,b ****hi
 
+" insert displayed R code
+map! ,rc ``` r```ki
+
