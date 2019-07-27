@@ -6,6 +6,12 @@ typing xyz, then highlighting it, then making is bold
 " insert URL link
 map! ,u []()2hi
 
+" insert URL image link
+map! ,mgu ![alt text]()i
+
+" insert local image location
+map! ,mgl ![loc]()i
+
 " insert italicized tex
 map! ,i **i
 
